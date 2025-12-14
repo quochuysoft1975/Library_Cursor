@@ -26,6 +26,12 @@ function Books() {
               <h1 className="text-2xl font-bold text-ink-900">Trung Tâm Thư Viện</h1>
             </Link>
             <div className="flex items-center space-x-4">
+              <Link to="/books" className="text-ink-600 hover:text-ink-900 transition-colors">
+                Sách
+              </Link>
+              <Link to="/categories" className="text-ink-600 hover:text-ink-900 transition-colors">
+                Thể Loại
+              </Link>
               <Link to="/profile" className="btn-outline text-sm flex items-center space-x-2">
                 <User className="w-4 h-4" />
                 <span>Hồ sơ</span>
