@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import authRoutes from './routes/auth.routes.js';
+import profileRoutes from './routes/profile.routes.js';
 import './config/database.js'; // Initialize database connection
 
 dotenv.config();
@@ -30,6 +31,7 @@ app.get('/api/health', (req, res) => {
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/profile', profileRoutes);
 // app.use('/api/books', bookRoutes);
 // app.use('/api/borrow', borrowRoutes);
 
@@ -57,4 +59,5 @@ app.listen(PORT, () => {
   console.log(`📚 Library Management System API`);
   console.log(`🔗 Health check: http://localhost:${PORT}/api/health`);
   console.log(`🔐 Auth endpoints: http://localhost:${PORT}/api/auth`);
+  console.log(`👤 Profile endpoints: http://localhost:${PORT}/api/profile`);
 });

@@ -29,13 +29,13 @@ function Register() {
 
       if (response.success) {
         setSuccessMessage(response.message);
-        // Redirect to login after 2 seconds
+        // Chuyển hướng đến trang đăng nhập sau 2 giây
         setTimeout(() => {
           navigate('/login');
         }, 2000);
       }
     } catch (error) {
-      console.error('Registration error:', error);
+      console.error('Lỗi đăng ký:', error);
 
       if (error.response?.data?.message) {
         setServerError(error.response.data.message);
@@ -55,19 +55,19 @@ function Register() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-paper-50 via-white to-wood-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full">
-        {/* Logo and Header */}
+        {/* Logo và Tiêu đề */}
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center space-x-2 mb-6">
             <BookMarked className="w-10 h-10 text-ink-800" />
-            <span className="text-3xl font-bold text-ink-900">LibraryHub</span>
+            <span className="text-3xl font-bold text-ink-900">Trung Tâm Thư Viện</span>
           </Link>
           <h2 className="text-3xl font-bold text-ink-900 mb-2">Tạo tài khoản</h2>
           <p className="text-ink-600">Đăng ký để bắt đầu mượn sách ngay hôm nay</p>
         </div>
 
-        {/* Registration Form */}
+        {/* Form Đăng ký */}
         <div className="card p-8 shadow-soft-lg">
-          {/* Success Message */}
+          {/* Thông báo Thành công */}
           {successMessage && (
             <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-start space-x-3">
               <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
@@ -78,7 +78,7 @@ function Register() {
             </div>
           )}
 
-          {/* Error Message */}
+          {/* Thông báo Lỗi */}
           {serverError && (
             <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start space-x-3">
               <XCircle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
@@ -90,7 +90,7 @@ function Register() {
           )}
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            {/* Email Field */}
+            {/* Trường Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-ink-700 mb-2">
                 Email
@@ -108,7 +108,7 @@ function Register() {
                     }
                   })}
                   className={`input pl-10 ${errors.email ? 'border-red-500 focus:border-red-500 focus:ring-red-200' : ''}`}
-                  placeholder="example@email.com"
+                  placeholder="vidu@email.com"
                 />
               </div>
               {errors.email && (
@@ -116,7 +116,7 @@ function Register() {
               )}
             </div>
 
-            {/* Name Field */}
+            {/* Trường Họ và Tên */}
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-ink-700 mb-2">
                 Họ và tên
@@ -142,7 +142,7 @@ function Register() {
               )}
             </div>
 
-            {/* Password Field */}
+            {/* Trường Mật khẩu */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-ink-700 mb-2">
                 Mật khẩu
@@ -172,7 +172,7 @@ function Register() {
               )}
             </div>
 
-            {/* Confirm Password Field */}
+            {/* Trường Xác nhận Mật khẩu */}
             <div>
               <label htmlFor="confirmPassword" className="block text-sm font-medium text-ink-700 mb-2">
                 Xác nhận mật khẩu
@@ -196,7 +196,7 @@ function Register() {
               )}
             </div>
 
-            {/* Submit Button */}
+            {/* Nút Gửi */}
             <button
               type="submit"
               disabled={isLoading}
@@ -216,7 +216,7 @@ function Register() {
             </button>
           </form>
 
-          {/* Login Link */}
+          {/* Liên kết Đăng nhập */}
           <div className="mt-6 text-center">
             <p className="text-ink-600">
               Đã có tài khoản?{' '}
@@ -227,7 +227,7 @@ function Register() {
           </div>
         </div>
 
-        {/* Back to Home */}
+        {/* Quay lại Trang chủ */}
         <div className="mt-6 text-center">
           <Link to="/" className="text-ink-600 hover:text-ink-800 transition-colors text-sm">
             ← Quay lại trang chủ

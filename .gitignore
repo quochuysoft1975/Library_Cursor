@@ -1,0 +1,270 @@
+# ============================================================================
+# Library Management System - .gitignore
+# ============================================================================
+# File này bảo vệ các thông tin nhạy cảm và file không cần thiết
+# ============================================================================
+
+# ============================================================================
+# ENVIRONMENT VARIABLES & SECRETS (QUAN TRỌNG NHẤT!)
+# ============================================================================
+# Các file chứa thông tin nhạy cảm như mật khẩu database, JWT secret, API keys
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+*.env
+
+# ============================================================================
+# NODE MODULES
+# ============================================================================
+# Thư mục node_modules không cần commit, sẽ được cài lại bằng npm install
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ============================================================================
+# BUILD & DIST FILES
+# ============================================================================
+# Các file được build, sẽ được tạo lại khi build
+dist/
+build/
+*.tsbuildinfo
+.next/
+out/
+.nuxt/
+.cache/
+
+# ============================================================================
+# PRISMA GENERATED FILES
+# ============================================================================
+# Prisma Client được generate tự động, không cần commit
+backend/prisma/generated/
+backend/.prisma/
+
+# ============================================================================
+# LOGS
+# ============================================================================
+# Các file log
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# ============================================================================
+# RUNTIME DATA
+# ============================================================================
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ============================================================================
+# COVERAGE & TESTING
+# ============================================================================
+coverage/
+*.lcov
+.nyc_output/
+*.coverage
+.coverage/
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# ============================================================================
+# IDE & EDITOR FILES
+# ============================================================================
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IntelliJ IDEA / WebStorm
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ============================================================================
+# OS FILES
+# ============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ============================================================================
+# TEMPORARY FILES
+# ============================================================================
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+.cache/
+
+# ============================================================================
+# PACKAGE MANAGER LOCKS (Optional - có thể giữ lại để đảm bảo version consistency)
+# ============================================================================
+# Uncomment nếu muốn ignore package-lock.json
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ============================================================================
+# DATABASE FILES
+# ============================================================================
+# Local database files (nếu có)
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# ============================================================================
+# MISC
+# ============================================================================
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache
+.parcel-cache
+
+# Next.js
+.next
+out
+
+# Nuxt.js
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+storybook-static
+
+# Temporary folders
+tmp/
+temp/
+
+# ============================================================================
+# SECURITY - NEVER COMMIT THESE!
+# ============================================================================
+# API Keys
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+
+# Secrets
+secrets/
+.secrets
+*.secret
+
+# ============================================================================
+# PROJECT SPECIFIC
+# ============================================================================
+# Backup files
+*.backup
+*.old
+
+# Local configuration overrides
+config.local.js
+config.local.json
+

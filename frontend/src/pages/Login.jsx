@@ -23,7 +23,7 @@ function Login() {
       const response = await authService.login(data);
 
       if (response.success) {
-        // Redirect based on user role
+        // Chuyển hướng dựa trên vai trò người dùng
         const role = response.data.user.role;
         if (role === 'admin' || role === 'librarian') {
           navigate('/dashboard');
@@ -32,7 +32,7 @@ function Login() {
         }
       }
     } catch (error) {
-      console.error('Login error:', error);
+      console.error('Lỗi đăng nhập:', error);
 
       if (error.response?.data?.message) {
         setServerError(error.response.data.message);
@@ -47,19 +47,19 @@ function Login() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-paper-50 via-white to-wood-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full">
-        {/* Logo and Header */}
+        {/* Logo và Tiêu đề */}
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center space-x-2 mb-6">
             <BookMarked className="w-10 h-10 text-ink-800" />
-            <span className="text-3xl font-bold text-ink-900">LibraryHub</span>
+            <span className="text-3xl font-bold text-ink-900">Trung Tâm Thư Viện</span>
           </Link>
           <h2 className="text-3xl font-bold text-ink-900 mb-2">Đăng nhập</h2>
           <p className="text-ink-600">Chào mừng bạn quay trở lại</p>
         </div>
 
-        {/* Login Form */}
+        {/* Form Đăng nhập */}
         <div className="card p-8 shadow-soft-lg">
-          {/* Error Message */}
+          {/* Thông báo Lỗi */}
           {serverError && (
             <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start space-x-3">
               <XCircle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
@@ -71,7 +71,7 @@ function Login() {
           )}
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            {/* Email Field */}
+            {/* Trường Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-ink-700 mb-2">
                 Email
@@ -89,7 +89,7 @@ function Login() {
                     }
                   })}
                   className={`input pl-10 ${errors.email ? 'border-red-500 focus:border-red-500 focus:ring-red-200' : ''}`}
-                  placeholder="example@email.com"
+                  placeholder="vidu@email.com"
                 />
               </div>
               {errors.email && (
@@ -97,7 +97,7 @@ function Login() {
               )}
             </div>
 
-            {/* Password Field */}
+            {/* Trường Mật khẩu */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-ink-700 mb-2">
                 Mật khẩu
@@ -127,7 +127,7 @@ function Login() {
               )}
             </div>
 
-            {/* Submit Button */}
+            {/* Nút Gửi */}
             <button
               type="submit"
               disabled={isLoading}
@@ -147,7 +147,7 @@ function Login() {
             </button>
           </form>
 
-          {/* Register Link */}
+          {/* Liên kết Đăng ký */}
           <div className="mt-6 text-center">
             <p className="text-ink-600">
               Chưa có tài khoản?{' '}
@@ -158,7 +158,7 @@ function Login() {
           </div>
         </div>
 
-        {/* Back to Home */}
+        {/* Quay lại Trang chủ */}
         <div className="mt-6 text-center">
           <Link to="/" className="text-ink-600 hover:text-ink-800 transition-colors text-sm">
             ← Quay lại trang chủ
